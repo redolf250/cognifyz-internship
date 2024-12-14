@@ -15,8 +15,7 @@ public class PasswordGeneratorServiceImpl implements PasswordGeneratorService{
         if (includeSpecialChars) characterPool.append(Utils.SPECIAL_CHARACTER);
 
         if (characterPool.isEmpty()) {
-            System.out.println("You must select at least one character type!");
-            return "";
+            throw new IllegalArgumentException("You must select at least one character type!");
         }
 
         Random random = new Random();

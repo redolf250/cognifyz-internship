@@ -7,3 +7,5 @@
 
 rootProject.name = "internship-work"
 include("level-one")
+include("level-two")
+include("level-three")

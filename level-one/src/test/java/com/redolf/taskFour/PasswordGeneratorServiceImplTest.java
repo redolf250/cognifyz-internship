@@ -2,6 +2,7 @@ package com.redolf.taskFour;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
@@ -26,5 +27,12 @@ class PasswordGeneratorServiceImplTest {
         String password = service.generatePassword(length, number, lowerCase, upperCase, specialChar);
         assertEquals(password.length(), length);
         assertNotNull(password);
+    }
+
+    @Test
+    void generatePassword1() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            service.generatePassword(8, false, false, false, false);
+        });
     }
 }
